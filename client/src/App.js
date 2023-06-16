@@ -1,16 +1,27 @@
 import React from 'react'
-import './App.css';
-import Login from './pages/Login';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home'
+import Login from './pages/Login'
+import Dash from './pages/Dash';
+import Register from './pages/Register'
+
+
+
 
 function App() {
   return (
-    <div className="App">
-      <h1>App</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et molestias reiciendis quos similique vero natus blanditiis necessitatibus quis voluptatum dolorem fugit accusamus omnis pariatur, ratione minima explicabo voluptatibus neque iure.</p>
-      <br />
-      <Login />
+    <div>
+      <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/dash-board" element={<Dash />} />
+        <Route path="/register" element={<Register />} />
+        {/* <Route path="/studentsError" element={<Error />} /> */}
+      </Routes>
+    </Router>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
