@@ -40,7 +40,7 @@ export default function StudentsReg() {
             axios.post("http://127.0.0.1:9000/students/studentsRegistration", formData).then((req, res) => {
                 // const data = req.data
                 // console.log(data)
-                navigate('/studentsLogin')
+                navigate('/login')
             })
         } catch (e) {
             console.log("error " + e)
