@@ -1,6 +1,7 @@
 // import axios from 'axios'
 import React from 'react'
-import { useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
+import VanDash from '../components/VanDash'
 // import axios from 'axios'
 
 function Dash() {
@@ -21,6 +22,14 @@ function Dash() {
 
   return (
     <div>
+      <header>
+        <Link className="site-logo" to="/">#Rummy</Link>
+        <nav>
+          <Link to="/about">About</Link>
+          <Link to="/vans">Vans</Link>
+        </nav>
+      </header>
+      <VanDash />
       <h1>Student Prifile</h1>
       id: {student._id}
       <br />
