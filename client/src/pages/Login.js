@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 function Login() {
@@ -98,7 +98,7 @@ function Login() {
                 // const std = localStorage.getItem('student')
                 // const std = response.data.student
                 // console.log(std)
-                navigate('/dash-board', { state: { std } }) // send propertie to profile page
+                navigate('/dash', { state: { std } }) // send propertie to profile page
             }
         } catch (error) {
             alert("details not matching")
@@ -134,7 +134,7 @@ function Login() {
                 <button>Login</button>
                 <br />
                 <br />
-                <p>Dont have Account <span><a href='http://localhost:3000/studentsRegister'> Click Here! </a></span> for Registration</p>
+                <p>Dont have Account <span><Link to={`/register`}>Click here!</Link></span> for Registration</p>
             </form>
         </div>
     )

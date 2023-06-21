@@ -1,8 +1,8 @@
 // import axios from 'axios'
 import React from 'react'
-import { useLocation } from 'react-router-dom'
+import { Outlet, useLocation } from 'react-router-dom'
 import VanDash from '../components/VanDash'
-import Navbar from '../components/Navbar'
+// import Navbar from '../components/Navbar'
 // import axios from 'axios'
 
 function Dash() {
@@ -19,12 +19,14 @@ function Dash() {
   const location = useLocation()
 
   const student = location.state.std
-  // console.log(student)
+  console.log(student)
 
   return (
     <div>
-      <Navbar />
+      {/* this is the layout route */}
+      {/* <Navbar /> */}
       <VanDash />
+      <Outlet /> 
       <h1>Student Prifile</h1>
       id: {student._id}
       <br />
