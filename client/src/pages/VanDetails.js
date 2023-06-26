@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
-import { useParams } from "react-router-dom"
-import Navbar from "../components/Navbar"
+import { useParams , Link } from "react-router-dom"
+// import Navbar from "../components/Navbar"
 
 export default function VanDetail() {
     const params = useParams()
@@ -15,10 +15,15 @@ export default function VanDetail() {
 
     return (
         <div className="van-detail-container">
+            <Link
+                to=".."
+                relative="path"
+                className="back-button"
+            >&larr; <span>Back to all vans</span></Link>
             {van ? (
                 <div className="van-detail">
                     {/* <Navbar /> */}
-                    <img src={van.imageUrl} alt="van"/>
+                    <img src={van.imageUrl} alt="van" />
                     <i className={`van-type ${van.type} selected`}>{van.type}</i>
                     <h2>{van.name}</h2>
                     <p className="van-price"><span>${van.price}</span>/day</p>
